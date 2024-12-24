@@ -19,6 +19,7 @@ body {
   font-display: swap;
   height: inherit;
   justify-content: center;
+  padding: 10px; /* Added padding for smaller screens */
 }
 
 .wrapper {
@@ -36,6 +37,8 @@ body {
   flex-basis: 400px;
   height: 540px;
   padding: 20px 35px;
+  width: 100%; /* Adjust for smaller screens */
+  max-width: 400px; /* Maintain width limit */
 }
 
 .screen {
@@ -46,17 +49,19 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
   color: #232323;
-  font-size: 35px;
+  font-size: 28px; /* Adjusted for smaller screens */
   overflow: auto;
-  padding: 20px;
+  padding: 15px;
   text-align: right;
-  width: 326px;
+  width: 100%; /* Adjust to container */
+  max-width: 326px; /* Maintain width limit */
 }
 
 .calc-btn-row {
   display: flex;
   justify-content: space-between;
   margin: 5% 0;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
 .calc-btn {
@@ -69,20 +74,14 @@ body {
   color: #232323;
   flex-basis: 20%;
   font-family: inherit;
-  font-size: 24px;
-  height: 65px;
+  font-size: 20px; /* Adjusted for smaller screens */
+  height: 55px; /* Adjusted for smaller screens */
   transition: 0.3s;
 }
 
 .calc-btn:last-child {
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.01);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-  color: #fff;
   background: #b0ebb4;
+  color: #fff;
 }
 
 .calc-btn:last-child:hover {
@@ -110,4 +109,52 @@ body {
 
 .triple {
   flex-basis: 73%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .screen {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .calc-btn {
+    flex-basis: 22%; /* Slightly larger buttons */
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .double {
+    flex-basis: 46%;
+  }
+
+  .triple {
+    flex-basis: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    flex-basis: 100%;
+    max-width: 350px; /* Smaller max width */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .screen {
+    font-size: 20px;
+  }
+
+  .calc-btn {
+    flex-basis: 23%; /* Adjust button size */
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .double {
+    flex-basis: 48%;
+  }
+
+  .triple {
+    flex-basis: 72%;
+  }
 }
